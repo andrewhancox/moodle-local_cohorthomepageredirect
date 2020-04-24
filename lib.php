@@ -22,6 +22,10 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
         return;
     }
 
+    if (is_siteadmin()) {
+        return;
+    }
+
     $courseid = null;
 
     if (is_int($courseorid)) {
