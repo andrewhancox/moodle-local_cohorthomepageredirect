@@ -26,6 +26,11 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
         return;
     }
 
+
+    if (!empty(WS_SERVER)) {
+        return;
+    }
+
     $courseid = null;
 
     if (is_int($courseorid)) {
