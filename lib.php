@@ -14,6 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * @package local_cohorthomepageredirect
+ * @author Andrew Hancox <andrewdchancox@googlemail.com>
+ * @author Open Source Learning <enquiries@opensourcelearning.co.uk>
+ * @link https://opensourcelearning.co.uk
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2021, Andrew Hancox
+ */
+
 function local_cohorthomepageredirect_after_require_login($courseorid, $autologinguest, $cm, $setwantsurltome, $preventredirect) {
     global $SITE, $SCRIPT, $USER, $CFG;
     require_once("$CFG->dirroot/cohort/lib.php");

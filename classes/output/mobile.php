@@ -15,10 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Mobile output class for Choice group
- *
- * @package    local_courseoptiontest
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package local_cohorthomepageredirect
+ * @author Andrew Hancox <andrewdchancox@googlemail.com>
+ * @author Open Source Learning <enquiries@opensourcelearning.co.uk>
+ * @link https://opensourcelearning.co.uk
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2021, Andrew Hancox
  */
 
 namespace local_cohorthomepageredirect\output;
@@ -27,11 +29,6 @@ defined('MOODLE_INTERNAL') || die();
 
 use context_system;
 
-/**
- * Mobile output class for Choice group
- *
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 class mobile {
 
     /**
