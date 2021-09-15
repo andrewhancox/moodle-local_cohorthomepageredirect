@@ -24,7 +24,7 @@
  */
 
 function local_cohorthomepageredirect_after_require_login($courseorid, $autologinguest, $cm, $setwantsurltome, $preventredirect) {
-    global $SITE, $SCRIPT, $USER, $CFG;
+    global $$SCRIPT, $USER, $CFG;
     require_once("$CFG->dirroot/cohort/lib.php");
 
     if (isset($cm)) {
@@ -42,16 +42,14 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
 
     $courseid = null;
 
-    if (is_int($courseorid)) {
-        $courseid = $courseorid;
-    } else if (is_object($courseorid)) {
-        $courseid = $courseorid->id;
-    }
-
     $context = context_system::instance();
     $pluginconfig = get_config('local_cohorthomepageredirect');
 
-    if ($courseid == $SITE->id || $SCRIPT == '/my/index.php') {
+    if (
+            ($SCRIPT == '/index.php' && !empty($pluginconfig->redirectsitehome))
+            ||
+            ($SCRIPT == '/my/index.php' && !empty($pluginconfig->redirectdashboard))
+    ) {
         $cohorts = cohort_get_user_cohorts($USER->id);
 
         foreach ($cohorts as $cohort) {

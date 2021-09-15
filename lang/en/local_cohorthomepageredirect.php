@@ -26,3 +26,5 @@
 $string['pluginname'] = 'Cohort home page redirect';
 $string['mobileapp'] = ' (mobile app)';
 $string['unused'] = 'unused';
+$string['redirectsitehome'] = 'Redirect site home';
+$string['redirectdashboard'] = 'Redirect dashboard';

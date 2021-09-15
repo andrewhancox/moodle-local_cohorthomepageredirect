@@ -33,6 +33,12 @@ if ($hassiteconfig) {
     $settingspage =
             new admin_settingpage('local_cohorthomepageredirect', new lang_string('pluginname', 'local_cohorthomepageredirect'));
 
+    $settingspage->add(new admin_setting_configcheckbox("local_cohorthomepageredirect/redirectsitehome",
+            new lang_string('redirectsitehome', 'local_cohorthomepageredirect'), '', true));
+
+    $settingspage->add(new admin_setting_configcheckbox("local_cohorthomepageredirect/redirectdashboard",
+            new lang_string('redirectdashboard', 'local_cohorthomepageredirect'), '', true));
+
     foreach ($cohorts['cohorts'] as $cohort) {
         $settingspage->add(new admin_setting_configtext("local_cohorthomepageredirect/cohorthomepageredirect_$cohort->id",
                 $cohort->name, '', '', PARAM_URL));
