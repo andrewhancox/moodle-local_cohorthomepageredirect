@@ -24,7 +24,7 @@
  */
 
 function local_cohorthomepageredirect_after_require_login($courseorid, $autologinguest, $cm, $setwantsurltome, $preventredirect) {
-    global $$SCRIPT, $USER, $CFG;
+    global $SCRIPT, $USER, $CFG;
     require_once("$CFG->dirroot/cohort/lib.php");
 
     if (isset($cm)) {
