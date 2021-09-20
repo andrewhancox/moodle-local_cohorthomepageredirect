@@ -24,7 +24,7 @@
  */
 
 function local_cohorthomepageredirect_after_require_login($courseorid, $autologinguest, $cm, $setwantsurltome, $preventredirect) {
-    global $SCRIPT, $USER, $CFG;
+    global $SCRIPT, $USER, $CFG, $SESSION;
     require_once("$CFG->dirroot/cohort/lib.php");
 
     if (isset($cm)) {
@@ -35,8 +35,11 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
         return;
     }
 
+    if (!empty(WS_SERVER) || !empty(AJAX_SCRIPT)) {
+        return;
+    }
 
-    if (!empty(WS_SERVER)) {
+    if (!empty($SESSION->local_cohorthomepageredirect_loop_protect)) {
         return;
     }
 
@@ -59,7 +62,13 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
             if (empty($pluginconfig->{"cohorthomepageredirect_$cohort->id"})) {
                 continue;
             }
+            $SESSION->local_cohorthomepageredirect_loop_protect = true;
             redirect($pluginconfig->{"cohorthomepageredirect_$cohort->id"});
         }
     }
+}
+
+function local_cohorthomepageredirect_before_footer() {
+    global $SESSION;
+    unset($SESSION->local_cohorthomepageredirect_loop_protect);
 }
