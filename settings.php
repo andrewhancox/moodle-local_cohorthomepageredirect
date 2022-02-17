@@ -40,10 +40,11 @@ if ($hassiteconfig) {
             new lang_string('redirectdashboard', 'local_cohorthomepageredirect'), '', true));
 
     foreach ($cohorts['cohorts'] as $cohort) {
+        $name = format_string($cohort->name);
         $settingspage->add(new admin_setting_configtext("local_cohorthomepageredirect/cohorthomepageredirect_$cohort->id",
-                $cohort->name, '', '', PARAM_URL));
+            $name, '', '', PARAM_URL));
         $settingspage->add(new admin_setting_configtext("local_cohorthomepageredirect/cohorthomepageredirect_mobile_$cohort->id",
-                $cohort->name . get_string('mobileapp', 'local_cohorthomepageredirect'), '', '', PARAM_URL));
+                $name . get_string('mobileapp', 'local_cohorthomepageredirect'), '', '', PARAM_URL));
     }
 
     $ADMIN->add('accounts', $settingspage);
