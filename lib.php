@@ -65,6 +65,11 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
             $SESSION->local_cohorthomepageredirect_loop_protect = true;
             redirect($pluginconfig->{"cohorthomepageredirect_$cohort->id"});
         }
+
+        if (!empty($pluginconfig->{"cohorthomepageredirect_0"})) {
+            $SESSION->local_cohorthomepageredirect_loop_protect = true;
+            redirect($pluginconfig->{"cohorthomepageredirect_0"});
+        }
     }
 }
 

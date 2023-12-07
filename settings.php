@@ -39,6 +39,8 @@ if ($hassiteconfig) {
     $settingspage->add(new admin_setting_configcheckbox("local_cohorthomepageredirect/redirectdashboard",
             new lang_string('redirectdashboard', 'local_cohorthomepageredirect'), '', true));
 
+    array_push($cohorts['cohorts'], (object)['name' => get_string('none'), 'id' => 0]);
+
     foreach ($cohorts['cohorts'] as $cohort) {
         $name = format_string($cohort->name);
         $settingspage->add(new admin_setting_configtext("local_cohorthomepageredirect/cohorthomepageredirect_$cohort->id",
