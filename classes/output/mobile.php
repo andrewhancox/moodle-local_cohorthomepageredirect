@@ -39,15 +39,15 @@ class mobile {
      * @return array HTML, javascript and otherdata
      */
     public static function mobile_course_view($args) {
-        return array(
-                'templates'  => array(
-                        array(
+        return [
+                'templates'  => [
+                        [
                                 'id'   => 'unused',
                                 'html' => 'unused',
-                        ),
-                ),
-                'javascript' => ''
-        );
+                        ],
+                ],
+                'javascript' => '',
+        ];
     }
 
     private static function get_cohort_redirect_url() {

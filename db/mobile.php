@@ -23,22 +23,22 @@
  * @copyright 2021, Andrew Hancox
  */
 
-$addons = array(
-    "local_cohorthomepageredirect" => array(
-        "handlers" => array(
-            'corecourseoptionsdelegate' => array(
-                'displaydata' => array(
+$addons = [
+    "local_cohorthomepageredirect" => [
+        "handlers" => [
+            'corecourseoptionsdelegate' => [
+                'displaydata' => [
                     'title' => 'unused',
                     'icon-md' => 'unused',
-                    'icon' => 'unused'
-                ),
+                    'icon' => 'unused',
+                ],
                 'delegate' => 'CoreCourseOptionsDelegate',
                 'method' => 'mobile_course_view',
-                'init' => 'init_corecourseoptionsdelegate'
-            )
-        ),
-        'lang' => array(
-            array('unused', 'local_cohorthomepageredirect'),
-        )
-    )
-);
+                'init' => 'init_corecourseoptionsdelegate',
+            ],
+        ],
+        'lang' => [
+            ['unused', 'local_cohorthomepageredirect'],
+        ],
+    ],
+];
