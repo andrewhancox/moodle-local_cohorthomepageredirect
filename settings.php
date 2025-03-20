@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 if ($hassiteconfig) {
     require_once("$CFG->dirroot/cohort/lib.php");
     $context = context_system::instance();
-    $cohorts = cohort_get_cohorts($context->id);
+    $cohorts = cohort_get_cohorts($context->id, 0, 9999);
 
     $settingspage =
             new admin_settingpage('local_cohorthomepageredirect', new lang_string('pluginname', 'local_cohorthomepageredirect'));
