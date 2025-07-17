@@ -72,8 +72,3 @@ function local_cohorthomepageredirect_after_require_login($courseorid, $autologi
         }
     }
 }
-
-function local_cohorthomepageredirect_before_footer() {
-    global $SESSION;
-    unset($SESSION->local_cohorthomepageredirect_loop_protect);
-}
